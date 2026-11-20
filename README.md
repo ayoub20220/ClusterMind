@@ -1,5 +1,9 @@
 # ClusterMind
 
+<p align="center">
+  <img src="assets/clustermind-logo.png" alt="ClusterMind logo" width="180">
+</p>
+
 ClusterMind is an open-source Terraform change intelligence platform. It will turn a machine-readable Terraform plan into an explainable impact report for engineers, dashboards, and CI/CD pipelines.
 
 > Milestone 0 is repository foundation only. Terraform analysis is not implemented yet.
