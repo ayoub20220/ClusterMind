@@ -1,14 +1,17 @@
+<div align="center">
+  <img src="assets/clustermind-logo.png" alt="ClusterMind logo" width="112" />
+  <h1>ClusterMind</h1>
+  <p><strong>Understand infrastructure changes before they happen.</strong></p>
+  <p>Terraform change intelligence · Dependency impact · CI/CD insights</p>
+</div>What is ClusterMind?
+ClusterMind is an open-source project exploring how Terraform plans can be turned into clear, explainable infrastructure impact reports.
+
 <div align="center">ClusterMind
 Infrastructure Change Intelligence for Terraform
 Understand the potential impact of infrastructure changes before they are applied.
 
 Overview · How it works · Architecture · Roadmap · Project boundaries
 </div>Project status: Early development. The architecture and MVP scope are being defined; features described below are planned and should not yet be considered implemented.
-
-Overview
-Terraform plans show which resources Terraform intends to create, update, replace, or destroy. That is essential information—but understanding the wider consequences of a change can require more context.
-
-ClusterMind aims to turn Terraform plan data into an explainable infrastructure impact assessment. It analyzes proposed resource changes, follows relationships declared in Terraform, highlights potentially affected resources, and reports risks with supporting evidence and recommendations.
 
 The goal is to help infrastructure, cloud, platform, and DevOps engineers make better-informed decisions before running terraform apply.
 Why ClusterMind?
