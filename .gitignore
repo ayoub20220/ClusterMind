@@ -18,3 +18,8 @@ htmlcov/
 *.tfplan
 plan.json
 .DS_Store
+
+# Local Codex instructions and project notes
+AGENTS.md
+CODEX_START_PROMPT.md
+docs/
