@@ -1,5 +1,12 @@
+<p align="center">
+  <img
+    width="300"
+    height="300"
+    alt="ClusterMind Logo"
+    src="https://github.com/user-attachments/assets/cdd6542f-434c-4cdb-a37f-58931a7cfff4"
+  />
+</p>
 <div align="center">
-  <img src="assets/clustermind-logo.png" alt="ClusterMind logo" width="112" />
   <h1>ClusterMind</h1>
   <p><strong>Understand infrastructure changes before they happen.</strong></p>
   <p>Terraform change intelligence · Dependency impact · CI/CD insights</p>
