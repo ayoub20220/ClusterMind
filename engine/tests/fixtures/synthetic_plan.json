@@ -1,0 +1,88 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.8.5",
+  "configuration": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "azurerm_resource_group.example",
+          "expressions": {}
+        },
+        {
+          "address": "azurerm_storage_account.example",
+          "expressions": {
+            "resource_group_name": {
+              "references": ["azurerm_resource_group.example.name"]
+            }
+          }
+        },
+        {
+          "address": "azurerm_network_interface.example",
+          "depends_on": ["azurerm_storage_account.example"]
+        },
+        {
+          "address": "azurerm_virtual_machine.example",
+          "expressions": {
+            "network_interface_id": {
+              "references": ["azurerm_network_interface.example.id"]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "azurerm_resource_group.example",
+      "module_address": null,
+      "mode": "managed",
+      "type": "azurerm_resource_group",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["create"],
+        "before": null,
+        "after": {"name": "synthetic-rg", "location": "westeurope"},
+        "after_unknown": {"id": true},
+        "before_sensitive": false,
+        "after_sensitive": false
+      }
+    },
+    {
+      "address": "azurerm_storage_account.example",
+      "mode": "managed",
+      "type": "azurerm_storage_account",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/azurerm",
+      "change": {
+        "actions": ["update"],
+        "before": {"account_tier": "Standard", "access_key": "old-secret"},
+        "after": {"account_tier": "Premium", "access_key": "new-secret"},
+        "before_sensitive": {"access_key": true},
+        "after_sensitive": {"access_key": true}
+      }
+    },
+    {
+      "address": "azurerm_network_interface.example",
+      "mode": "managed",
+      "type": "azurerm_network_interface",
+      "name": "example",
+      "change": {
+        "actions": ["delete", "create"],
+        "before": {"name": "old-nic"},
+        "after": {"name": "new-nic"}
+      }
+    },
+    {
+      "address": "azurerm_virtual_machine.example",
+      "mode": "managed",
+      "type": "azurerm_virtual_machine",
+      "name": "example",
+      "change": {
+        "actions": ["no-op"],
+        "before": {"name": "synthetic-vm"},
+        "after": {"name": "synthetic-vm"}
+      }
+    }
+  ]
+}
